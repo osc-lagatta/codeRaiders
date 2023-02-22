@@ -1,7 +1,7 @@
 import { component$, Slot } from '@builder.io/qwik';
 import { loader$ } from '@builder.io/qwik-city';
 
-import Header from '../components/header/header';
+import { Navigation} from "~/components/navigation/navigation";
 
 export const useServerTimeLoader = loader$(() => {
   return {
@@ -14,16 +14,15 @@ export default component$(() => {
   return (
     <>
       <main>
-        <Header />
+        <Navigation />
         <section>
           <Slot />
         </section>
       </main>
       <footer>
-        <a href="https://www.builder.io/" target="_blank">
-          Made with ♡ by Builder.io
-          <div>{serverTime.value.date}</div>
-        </a>
+        <div class="bg-gray-900 text-white py-14 text-center">
+          This is my footer
+        </div>
       </footer>
     </>
   );
