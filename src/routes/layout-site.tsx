@@ -1,7 +1,8 @@
 import { component$, Slot } from '@builder.io/qwik';
 import { loader$ } from '@builder.io/qwik-city';
+import { Footer } from "~/components/site/footer/footer";
 
-import { Navigation} from "~/components/navigation/navigation";
+import { Navigation} from "~/components/site/navigation/navigation";
 
 export const useServerTimeLoader = loader$(() => {
   return {
@@ -10,7 +11,7 @@ export const useServerTimeLoader = loader$(() => {
 });
 
 export default component$(() => {
-  const serverTime = useServerTimeLoader();
+  // const serverTime = useServerTimeLoader();
   return (
     <>
       <main>
@@ -19,11 +20,7 @@ export default component$(() => {
           <Slot />
         </section>
       </main>
-      <footer>
-        <div class="bg-gray-900 text-white py-14 text-center">
-          This is my footer
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 });
